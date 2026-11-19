@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    /* No flex: 1 here, so header only takes up the height it needs */
+    width: 100%;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    gap: 20px; 
+    padding: 15px;
+    list-style: none;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    flex: 1; /* This pushes the footer to the bottom of the screen */
+}
+
+@media (min-width: 768px) {
+    .navBar {
+        flex-direction: row;
+    }
+
+    .menuItems {
+        flex-direction: row;
+        flex: 1; 
+        gap: 50px;
+        align-items: center;
+    }
+}
