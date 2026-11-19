@@ -1,46 +1,88 @@
 body {
     display: flex;
-    flex-direction: column; /* Stack header, main, and footer vertically */
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
 }
 
 header {
-    /* No flex: 1 here, so header only takes up the height it needs */
     width: 100%;
+    background-color: gray;
 }
 
 .navBar {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
 }
 
-.menuItems {
+/* Hide the actual checkbox */
+.menuToggle {
+    display: none;
+}
+
+/* Hamburger label on mobile */
+.hamburger {
     display: flex;
     flex-direction: column;
-    background-color: gray;
-    gap: 20px; 
-    padding: 15px;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* Hidden by default on mobile */
+.menuItems {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
     list-style: none;
-    margin: 0;
+    margin: 15px 0 0 0;
+    padding: 0;
     justify-content: center;
     align-items: center;
 }
 
+/* Show menu when checkbox is checked */
+.menuToggle:checked ~ .menuItems {
+    display: flex;
+}
+
+.menuItems a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 main {
-    flex: 1; /* This pushes the footer to the bottom of the screen */
+    flex: 1;
 }
 
 @media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
     .navBar {
         flex-direction: row;
+        align-items: center;
     }
 
     .menuItems {
+        display: flex;
         flex-direction: row;
-        flex: 1; 
         gap: 50px;
-        align-items: center;
+        margin: 0;
+        padding: 0;
     }
 }

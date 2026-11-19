@@ -11,7 +11,13 @@
 
     <body>
         <header>
-            <nav class="navBar">
+            <nav class="navBar" aria-label="Main Navigation">
+                <input type="checkbox" id="menu-toggle" class="menuToggle" aria-label="Toggle navigation menu">
+                <label for="menu-toggle" class="hamburger" aria-hidden="true">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
                 <ul class="menuItems">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
@@ -21,6 +27,6 @@
             </nav>
         </header>
         <main></main>
-        <footer><a href="#">CodeWithAddo</a></footer>
+        <footer></footer>
     </body>
 </html>
